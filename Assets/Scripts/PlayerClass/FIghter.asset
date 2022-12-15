@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b00fb390ff7f2ac429a389cb2dd520a3, type: 3}
+  m_Name: FIghter
+  m_EditorClassIdentifier: 
+  playerType: Fighter
+  health: 200
+  moveSpeed: 2
+  playerSprite: {fileID: 1845164435, guid: 8e83600f3d70a8542988d5722773ed1c, type: 3}
+  weaponSprite: {fileID: 609072930, guid: 8a70538d493c7c349a6f09898345b595, type: 3}
