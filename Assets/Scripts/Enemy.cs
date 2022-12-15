@@ -4,11 +4,36 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [Header("Movement")]
     public float speed = 3f;
+
+    [Header("Attack")]
     [SerializeField] private float attackDamage = 10f;
     [SerializeField] private float attackSpeed = 1f;
+
     private float canAttack;
+
+    [Header("Health")]
+    [SerializeField] float health, maxHealth = 3f;
+
     private Transform target;
+
+    private void Start()
+    {
+        health = maxHealth;
+    }
+
+    public void TakeDamage(float damageAmount)
+    {
+        health -= damageAmount;
+        Debug.Log($"Enemy Health: {health}");
+
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+            Debug.Log("Enemy has died.");
+        }
+    }
 
     private void Update()
     {

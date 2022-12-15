@@ -27,6 +27,8 @@ public class Weapon : MonoBehaviour
             bullet.transform.position = firePoint.position;
             bullet.SetActive(true);
         }
+
+        //bullet.BulletDamage = BulletDamage;
         
         bullet.GetComponent<Rigidbody2D>().AddForce(firePoint.up * fireForce, ForceMode2D.Impulse);
     }
