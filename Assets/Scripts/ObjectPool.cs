@@ -6,10 +6,13 @@ public class ObjectPool : MonoBehaviour
 {
     public static ObjectPool instance;
 
-    private List<GameObject> pooledObjects = new List<GameObject>();
-    private int amountToPool = 20;
-    
+    private List<GameObject> bulletPool = new List<GameObject>();
+    [SerializeField] private int bulletPoolSize = 10;
     [SerializeField] private GameObject bulletPrefab;
+
+    private List<GameObject> enemyPool = new List<GameObject>();
+    [SerializeField] private int enemyPoolSize = 10;
+    [SerializeField] private GameObject enemyPrefab;
 
     private void Awake()
     {
@@ -22,21 +25,41 @@ public class ObjectPool : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < amountToPool; i++)
+        for (int i = 0; i < bulletPoolSize; i++)
         {
             GameObject obj = Instantiate(bulletPrefab);
             obj.SetActive(false);
-            pooledObjects.Add(obj);
+            bulletPool.Add(obj);
+        }
+
+        for (int i = 0; i < enemyPoolSize; i++)
+        {
+            GameObject enemy = Instantiate(enemyPrefab);
+            enemy.SetActive(false);
+            enemyPool.Add(enemy);
         }
     }
 
-    public GameObject GetPooledObejct()
+    public GameObject GetBulletPool()
     {
-        for (int i = 0; i < pooledObjects.Count; i++)
+        for (int i = 0; i < bulletPool.Count; i++)
         {
-            if (!pooledObjects[i].activeInHierarchy)
+            if (!bulletPool[i].activeInHierarchy)
             {
-                return pooledObjects[i];
+                return bulletPool[i];
+            }
+        }
+        
+        return null;
+    }
+
+    public GameObject GetEnemyPool()
+    {
+        for (int i = 0; i < enemyPool.Count; i++)
+        {
+            if (!enemyPool[i].activeInHierarchy)
+            {
+                return enemyPool[i];
             }
         }
         

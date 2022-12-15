@@ -20,7 +20,7 @@ public class Weapon : MonoBehaviour
     {
         //GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
 
-        GameObject bullet = ObjectPool.instance.GetPooledObejct();
+        GameObject bullet = ObjectPool.instance.GetBulletPool();
 
         if (bullet != null)
         {

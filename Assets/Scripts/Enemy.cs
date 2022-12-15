@@ -30,7 +30,9 @@ public class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
-            Destroy(gameObject);
+            //ObjectPool.instance.GetEnemyPool();
+            gameObject.SetActive(false);
+            //Destroy(gameObject);
             Debug.Log("Enemy has died.");
         }
     }
