@@ -10,10 +10,14 @@ public class PlayerHealth : MonoBehaviour
 
     [SerializeField] private Slider healthSlider;
 
+    private EnemySpawner enemySpawnManager;
+
     private void Start()
     {
         health = maxHealth;
         healthSlider.maxValue = maxHealth;
+
+        enemySpawnManager = GameObject.Find("EnemySpawner").GetComponent<EnemySpawner>();
     }
 
     public void UpdateHealth(float mod)
@@ -28,6 +32,7 @@ public class PlayerHealth : MonoBehaviour
         {
             health = 0f;
             healthSlider.value = health;
+            enemySpawnManager.OnPlayerDeath();
             PlayerDied();
         }
     }
