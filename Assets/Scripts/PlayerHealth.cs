@@ -1,9 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerHealth : MonoBehaviour
+public class PlayerHealth : MonoBehaviour, ISaveable
 {
     private float health = 0f;
     [SerializeField] private float maxHealth = 100f;
@@ -47,5 +48,28 @@ public class PlayerHealth : MonoBehaviour
     {
         float t = Time.deltaTime / 1f;
         healthSlider.value = Mathf.Lerp(healthSlider.value, health, t);
+    }
+
+    public object SaveState()
+    {
+        return new SaveData()
+        {
+            health = this.health,
+            maxHealth = this.maxHealth
+        };
+    }
+
+    public void LoadState(object state)
+    {
+        var saveData = (SaveData)state;
+        health = saveData.health;
+        maxHealth = saveData.maxHealth;
+    }
+
+    [Serializable]
+    private struct SaveData
+    {
+        public float health;
+        public float maxHealth;
     }
 }

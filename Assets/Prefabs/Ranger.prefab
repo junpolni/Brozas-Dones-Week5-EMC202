@@ -421,6 +421,7 @@ GameObject:
   - component: {fileID: 4927704822067678280}
   - component: {fileID: 4927704822067678281}
   - component: {fileID: 4927704822067678262}
+  - component: {fileID: 1540945913575364731}
   m_Layer: 0
   m_Name: Ranger
   m_TagString: Player
@@ -565,6 +566,19 @@ MonoBehaviour:
   rb: {fileID: 4927704822067678280}
   weapon: {fileID: 4927704820713859909}
   weaponHand: {fileID: 5767522090054459630}
+--- !u!114 &1540945913575364731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4927704822067678263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08079c915ed19e0478fcdb779edc9f93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 
 --- !u!1 &6750252617045861472
 GameObject:
   m_ObjectHideFlags: 0

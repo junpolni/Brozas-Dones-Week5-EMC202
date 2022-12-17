@@ -26,10 +26,12 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         MovementInput();
-
         RotateHand();
-
-        AttackInput();
+    
+        if (!PauseMenu.isPaused)
+        {
+            AttackInput();
+        }
 
     }
 
