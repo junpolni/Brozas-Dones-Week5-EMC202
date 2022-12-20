@@ -131,6 +131,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6d8f64a8ae1ec8459b6cf54d71c41a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyEnemy:
+    m_PersistentCalls:
+      m_Calls: []
   speed: 1
   attackDamage: 10
   attackSpeed: 0.5

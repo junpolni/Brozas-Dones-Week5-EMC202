@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Enemy : MonoBehaviour
 {
+
     [Header("Movement")]
     public float speed = 3f;
 
@@ -30,6 +32,8 @@ public class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
+            //destroyEnemy.Invoke();
+            Popup.enemyCount += 10;
             //ObjectPool.instance.GetEnemyPool();
             gameObject.SetActive(false);
             //Destroy(gameObject);

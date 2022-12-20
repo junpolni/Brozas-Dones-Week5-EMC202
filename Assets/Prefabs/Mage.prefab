@@ -413,6 +413,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerClass: {fileID: 11400000, guid: 421f092539fe67a4a9a400331288ce8b, type: 2}
+  popupClicks: {fileID: 0}
   bulletPrefab: {fileID: 5799727716091659570, guid: d95b25e2086000f43a0032d36574057e, type: 3}
   firePoint: {fileID: 3370110558508892389}
   fireForce: 20

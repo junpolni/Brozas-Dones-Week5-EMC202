@@ -31,6 +31,7 @@ public class PlayerHealth : MonoBehaviour, ISaveable
         }
         else if (health <= 0f)
         {
+            SecondAchievement.playerCount -= 1;
             health = 0f;
             healthSlider.value = health;
             enemySpawnManager.OnPlayerDeath();

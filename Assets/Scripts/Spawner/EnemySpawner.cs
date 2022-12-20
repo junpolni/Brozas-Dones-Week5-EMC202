@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+
     [SerializeField] private GameObject swarmerPrefab;
 
     [SerializeField] private float swarmerInterval = 3.5f;
@@ -28,16 +29,6 @@ public class EnemySpawner : MonoBehaviour
             //StartCoroutine(SpawnEnemy(interval, enemy));
             //GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-5f, 5), Random.Range(-6f, 6f), 0), Quaternion.identity);
         }
-
-        
-            
-        /* GameObject newEnemy = ObjectPool.instance.GetEnemyPool();    
-        newEnemy.transform.position = new Vector3(Random.Range(-5f, 5), Random.Range(-6f, 6f), 0);
-        newEnemy.SetActive(true);
-
-        yield return new WaitForSeconds(interval);
-        StartCoroutine(spawnEnemy(interval, enemy));
-        //GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-5f, 5), Random.Range(-6f, 6f), 0), Quaternion.identity); */
     }
 
     public void OnPlayerDeath()
